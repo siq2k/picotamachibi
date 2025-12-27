@@ -1,9 +1,10 @@
 from machine import Pin
 from time import sleep
 
-button_a = Pin(2, Pin.IN, Pin.PULL_UP)
-button_b = Pin(3, Pin.IN, Pin.PULL_UP)
-button_x = Pin(4, Pin.IN, Pin.PULL_UP)
+button_a = Pin(32, Pin.IN, Pin.PULL_UP)
+button_b = Pin(33, Pin.IN, Pin.PULL_UP)
+button_x = Pin(25, Pin.IN, Pin.PULL_UP)
+button_y = Pin(26, Pin.IN, Pin.PULL_UP)
 
 count = 0
 
@@ -15,5 +16,7 @@ while True:
         print("button B pressed")
     if button_x.value() == 0:
         print("button X pressed")
-    sleep(0.25)
+    if button_y.value() == 0:
+        print("button Y pressed")
+    sleep(0.01)
     count += 1
